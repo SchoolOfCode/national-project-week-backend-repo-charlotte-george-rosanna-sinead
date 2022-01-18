@@ -5,19 +5,11 @@
   "main": "index.js",
   "type" : "module",
   "scripts": {
-    // sinead: temporarily setting to app.js instead of bin/www.js
-    // "start": "node -r dotenv/config  ./bin/www.js",
-    "start": "node -r dotenv/config  app.js",
-
+    "start": "node -r dotenv/config  ./bin/www.js",
     "dbcreatestudyrequeststable": "node -r dotenv/config ./db/scripts/createStudyRequestsTable.js",
     "dbpopulatestudyrequeststable": "node -r dotenv/config ./db/scripts/populateStudyRequestsTable.js",
-            
-    // sinead: temporarily setting to app.js instead of bin/www.js
-    // "dev" : "nodemon -r dotenv/config  ./bin/www.js",
-    "dev" : "nodemon -r dotenv/config app.js",
-
-    "test": "echo \"Error: no test specified\" && exit 1",
-
+    "dev" : "nodemon -r dotenv/config  ./bin/www.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
