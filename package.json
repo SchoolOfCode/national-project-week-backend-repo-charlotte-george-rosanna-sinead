@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "gets all study buddy requests and posts new",
   "main": "index.js",
-  "type" : "module",
+  "type": "module",
   "scripts": {
     "start": "node -r dotenv/config  ./bin/www.js",
+    "dev": "nodemon -r dotenv/config  ./bin/www.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+
     "dbcreatestudyrequeststable": "node -r dotenv/config ./db/scripts/createStudyRequestsTable.js",
     "dbpopulatestudyrequeststable": "node -r dotenv/config ./db/scripts/populateStudyRequestsTable.js",
-    "dev" : "nodemon -r dotenv/config  ./bin/www.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dbcreatetesttable": "node -r dotenv/config ./db/scripts/createTestTable.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   },
   "homepage": "https://github.com/SchoolOfCode/national-project-week-repo-2-charlotte-george-rosanna-sinead#readme",
   "dependencies": {
+    "env-var": "^7.1.1",
     "express": "^4.17.2",
     "pg": "^8.7.1"
   },
