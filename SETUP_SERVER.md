@@ -44,6 +44,17 @@
     (for anyone cloning: just run $npm i, since the dependencies will be in the package.json)
     ```
 
+---
+
+    TODO: (if we want) to cover CORS issues, install cors:
+    ```
+        $ npm install cors
+    ```
+    and then later in the code ,, add a route, app.use(cors);
+    END OF TODO:
+
+---
+
 -   DONE - Edit package.json (the dependencies should have now been added) _[NB - DO package.json edits AFTER ALL THE INSTALLS otherwise express install will fail]_
 
     -   DONE - add type/module line
