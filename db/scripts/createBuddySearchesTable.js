@@ -11,11 +11,14 @@ const sqlString = `CREATE TABLE IF NOT EXISTS buddy_searches
                          (id serial PRIMARY KEY, 
                           user_id INT,
                           date_posted DATE NOT NULL DEFAULT CURRENT_DATE,
-                          session_type INT,
-                          why_study_buddy VARCHAR (255),
-                          approx_availability VARCHAR (255),
-                          search_status_id INT,
-                          create_date_time  DATE NOT NULL DEFAULT CURRENT_DATE
+                          session_type VARCHAR (50),
+                          why_study_buddy VARCHAR (500),
+                          approx_availability VARCHAR (100),
+                          search_status VARCHAR (10),
+                          create_date_time TIMESTAMP NOT NULL DEFAULT CURRENT_DATE,
+                          CONSTRAINT fk_users
+                              FOREIGN KEY(user_id)
+                                 REFERENCES users(id)
                           )`;
 
 async function createBuddySearchesTable() {

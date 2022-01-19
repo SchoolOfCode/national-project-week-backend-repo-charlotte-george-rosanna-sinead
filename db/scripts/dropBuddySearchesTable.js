@@ -6,7 +6,6 @@
 //       $ npm run dbdropbuddysearchestable
 
 import query from "../index.js";
-//this is a script to test dropping a test table
 
 const sqlString = `DROP TABLE IF EXISTS buddy_searches`;
 

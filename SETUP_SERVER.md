@@ -111,10 +111,11 @@ DONE - create folders, and EMPTY files:
 
     DONE - server/db/scripts
 
+
+    DONE - server/db/scripts/dropBuddySearchTable.js
     DONE - server/db/scripts/createBuddySearchTable.js
-
     DONE - server/db/scripts/populateBuddySearchTable.js
-
+    *(Note: there will be a set of these for each table we need to set up)*
 
     DONE - server/models/
 
@@ -270,10 +271,32 @@ Note: We can do further tests as we create the database files (see DATABASE - PA
 
 WRITE the db scripts to
 
--   TODO: CREATE the studyrequests table (server/db/scripts/createStudyRequestsTable.js)
+-   DONE - DROP IF EXISTS the buddy_requests table (server/db/scripts/dropBuddySearchesTable.js)
 
--   TODO: FILL (with test data) the studyrequests table (server/db/scripts/populateStudyRequestsTable.js)
--   TODO: to create and fill (with test data) the user table
+-   DONE - CREATE buddy_requests table script (server/db/scripts/createBuddySearchesTable.js)
+
+-   TODO: FILL (with test data) buddy_requests table (server/db/scripts/populateBuddySearchesTable.js)
+
+-   TODO: DROP IF EXISTS the users table (server/db/scripts/dropUsersTable)
+
+-   TODO: CREATE users table script (server/db/scripts/createUsersTable)
+
+-   TODO: FILL (with test data) users table (server/db/scripts/populateUsersTable.js)
+
+and add shortcuts into the package.json to run these:
+
+```
+        "dbdropbuddysearchestable": "node -r dotenv/config ./db/scripts/dropBuddySearchesTable.js",
+        "dbcreatebuddysearchestable": "node -r dotenv/config ./db/scripts/createBuddySearchesTable.js",
+        "dbpopulatebuddysearchestable": "node -r dotenv/config ./db/scripts/populateBuddySearchesTable.js",
+
+        "dbdropuserstable": "node -r dotenv/config ./db/scripts/dropUsersTable.js",
+        "dbcreateuserstable": "node -r dotenv/config ./db/scripts/createUsersTable.js",
+        "dbpopulateuserstable": "node -r dotenv/config ./db/scripts/populateUsersTable.js",
+
+        "dbcreatetesttable": "node -r dotenv/config ./db/scripts/createTestTable.js",
+        "dbdroptesttable": "node -r dotenv/config ./db/scripts/dropTestTable.js"
+```
 
 ---
 

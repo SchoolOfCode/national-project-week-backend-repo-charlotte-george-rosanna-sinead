@@ -9,13 +9,17 @@
         "dev": "nodemon -r dotenv/config  ./bin/www.js",
         "test": "echo \"Error: no test specified\" && exit 1",
 
-        "dbcreatebuddysearchestable": "node -r dotenv/config ./db/scripts/createBuddySearchesTable.js",
         "dbdropbuddysearchestable": "node -r dotenv/config ./db/scripts/dropBuddySearchesTable.js",
+        "dbdropuserstable": "node -r dotenv/config ./db/scripts/dropUsersTable.js",
+        
+        "dbcreateuserstable": "node -r dotenv/config ./db/scripts/createUsersTable.js",
+        "dbpopulateuserstable": "node -r dotenv/config ./db/scripts/populateUsersTable.js",
 
-        "dbpopulatestudyrequeststable": "node -r dotenv/config ./db/scripts/populateStudyRequestsTable.js",
+        "dbcreatebuddysearchestable": "node -r dotenv/config ./db/scripts/createBuddySearchesTable.js",
+        "dbpopulatebuddysearchestable": "node -r dotenv/config ./db/scripts/populateBuddySearchesTable.js",
+
         "dbcreatetesttable": "node -r dotenv/config ./db/scripts/createTestTable.js",
         "dbdroptesttable": "node -r dotenv/config ./db/scripts/dropTestTable.js"    
-
   },
   
   "repository": {
