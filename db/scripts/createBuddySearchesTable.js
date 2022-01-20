@@ -31,18 +31,3 @@ async function createBuddySearchesTable() {
 }
 
 createBuddySearchesTable();
-
-// TODO: in reality we'd make this 'create script' a lot robust, e.g.
-//     -we'd make some columns not null, and we'd have proper foreign keys
-//     see  https://www.postgresqltutorial.com/postgresql-create-table/
-// e.g.
-// CREATE TABLE account_roles (
-//   user_id INT NOT NULL,
-//   role_id INT NOT NULL,
-//   grant_date TIMESTAMP,
-//   PRIMARY KEY (user_id, role_id),
-//   FOREIGN KEY (role_id)
-//       REFERENCES roles (role_id),
-//   FOREIGN KEY (user_id)
-//       REFERENCES accounts (user_id)
-// );
