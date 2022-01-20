@@ -41,8 +41,13 @@
 
     DONE - $ npm install env-var  [will alert you immediately if your environment is misconfigured e.g. some required database-related environment variable]
 
+
+    DONE - $ npm install cors  [added this LATER to try and fix CORS error when our client tries to get data from API]
+
     (for anyone cloning: just run $npm i, since the dependencies will be in the package.json)
     ```
+
+_Note: The additional packages that are installed in the School of Code example include cookie-parser, debug and morgan and, in devDependencies, jest and supertest._
 
 ---
 

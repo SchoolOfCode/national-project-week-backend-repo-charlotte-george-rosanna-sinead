@@ -7,6 +7,17 @@ const app = express();
 app.use(express.json());
 console.log(`Reporting from app.js loud and clear`);
 
+// 20-Jan-2022
+//   Have installed cors package, and adding this to see if i can fix the cors errors.
+//   This arrticle was very useful (if it works!)
+//   https://www.section.io/engineering-education/how-to-use-cors-in-nodejs-with-express/
+import cors from "cors";
+app.use(
+    cors({
+        origin: "*",
+    })
+);
+
 //START DEBUG
 // 1 - UPDATE : THIS ONE TRIGGERS
 // app.get("/", (req, res) => {

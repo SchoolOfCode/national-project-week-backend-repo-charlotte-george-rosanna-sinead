@@ -11,13 +11,14 @@ const sqlString = `INSERT INTO users(
                         id, 
                         first_name, 
                         last_name, 
-                        slack_name)
+                        slack_name,
+                        profile_pic_link)
 
                     VALUES
-                        (1,'Mary','Duffy','MDuffy'),
-                        (2,'Jane','Rushmore','JRushmore'),
-                        (3,'Belinda','Jones','BelJones'),
-                        (4,'Bill','Stansell','BillStansell');`;
+                        (1,'Mary','Duffy','MDuffy', '1.png'),
+                        (2,'Jane','Rushmore','JRushmore', '2.png'),
+                        (3,'Belinda','Jones','BelJones', '3.png'),
+                        (4,'Bill','Stansell','BillStansell', '4.png');`;
 
 async function populateUsersTable() {
     const res = await query(sqlString);
