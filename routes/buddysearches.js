@@ -18,7 +18,7 @@ console.log(`We have reached routes/buddysearches.js script`);
 //END DEBUG
 
 router.get("/", async (req, res) => {
-    console.log(`Heuston we have reached the router.get function`);
+    console.log(`We have reached the router.get function`);
 
     const searchResults = await getAllBuddySearches();
     res.json({
