@@ -1,5 +1,30 @@
 import query from "../db/index.js";
 
+// 20Jan2022 -  DONE - Add in an INSERT statement for the POST route to use - in a function called postBuddySearch(?)
+export async function postBuddySearch(newBuddySearch) {
+    console.log({ newBuddySearch });
+
+    //20Jan2022 - don't forget that any of the values that are strings ALSO need single quotes around them - see below
+    const sqlString = `INSERT INTO buddy_searches(
+        user_id,
+        session_type,
+        why_study_buddy,
+        approx_availability,
+        search_status
+    )
+    VALUES(
+         ${newBuddySearch.userId},
+        '${newBuddySearch.sessionType}',
+        '${newBuddySearch.whyStudyBuddy}',
+        '${newBuddySearch.approxAvailability}',
+        'open'
+    );`;
+
+    const data = await query(sqlString);
+
+    return data.rows;
+}
+
 export async function getAllBuddySearches() {
     // First, for basic test,  just do a simple select
     // const data = await query(`SELECT * FROM buddy_searches;`);
@@ -26,5 +51,3 @@ export async function getAllBuddySearches() {
 
     return data.rows;
 }
-
-//TODO: Add in an INSERT statement for the POST route to use - in a function called postBuddySearch(?)

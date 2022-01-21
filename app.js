@@ -4,6 +4,7 @@ import buddySearchesRoutes from "./routes/buddysearches.js"; //DEBUG
 
 const app = express();
 
+//if you send in a json body, you need to have app.use(express.json()); BEFORE any app.get() or app.post() calls
 app.use(express.json());
 console.log(`Reporting from app.js loud and clear`);
 

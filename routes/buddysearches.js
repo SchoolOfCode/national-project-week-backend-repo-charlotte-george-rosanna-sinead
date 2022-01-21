@@ -1,6 +1,9 @@
 import express from "express";
 
-import { getAllBuddySearches } from "../models/buddysearches.js";
+import {
+    getAllBuddySearches,
+    postBuddySearch,
+} from "../models/buddysearches.js";
 //TODO: remember to add the postBuddySearch(?) into the export.
 
 const router = express.Router();
@@ -27,6 +30,16 @@ router.get("/", async (req, res) => {
     //temp - print out res to test
     // console.log("Results from getAllBuddySearches are: ", res);
     return;
+});
+
+router.post("*", async function (req, res) {
+    const postResults = await postBuddySearch(req.body);
+
+    res.json({
+        success: true,
+        message: `Inserted new buddy search record`,
+        payload: postResults,
+    });
 });
 
 export default router;

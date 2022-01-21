@@ -7,18 +7,18 @@
 
 import query from "../index.js";
 
+//20Jan2022 - Need to NOT send in a value for id column, because it messes up the auto-increment for subsequent inserts.
 const sqlString = `INSERT INTO users(
-                        id, 
-                        first_name, 
-                        last_name, 
-                        slack_name,
-                        profile_pic_link)
+        first_name, 
+        last_name, 
+        slack_name,
+        profile_pic_link)
 
-                    VALUES
-                        (1,'Mary','Duffy','MDuffy', '1.png'),
-                        (2,'Jane','Rushmore','JRushmore', '2.png'),
-                        (3,'Belinda','Jones','BelJones', '3.png'),
-                        (4,'Bill','Stansell','BillStansell', '4.png');`;
+    VALUES
+        ('Mary','Duffy','MDuffy', '1.png'),
+        ('Jane','Rushmore','JRushmore', '2.png'),
+        ('Belinda','Jones','BelJones', '3.png'),
+        ('Bill','Stansell','BillStansell', '4.png');`;
 
 async function populateUsersTable() {
     const res = await query(sqlString);
